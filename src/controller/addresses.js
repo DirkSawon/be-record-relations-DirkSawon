@@ -1,4 +1,4 @@
-const Order = require('../models/Address.js');
+const Address = require('../models/Address.js');
 const { connect, closeConnection } = require('../configs/db.js');
 
 exports.createNewAddress = async (req, res) => {
