@@ -1,3 +1,5 @@
+import addressModel from './Address.js';
+
 const { Schema, model } = require('mongoose');
 
 const schema = new Schema({
@@ -5,7 +7,11 @@ const schema = new Schema({
     firstname: String,
     lastname: String,
     email: String,
-    password: String
+    password: String,
+    address: {
+        type: Mongoose.Schema.Types.ObjecId,
+        ref: "Address"
+    }
 }, { timestamps: true});
 
 const userModel = new model('User', schema, 'users');
