@@ -4,7 +4,7 @@ const { connect, closeConnection } = require('../configs/db.js');
 exports.createNewUser = async (req, res) => {
     console.log(req.body);
 
-    const { id, firstname, lastname, email, password } = req.body;
+    const { id, firstname, lastname, email, password, address } = req.body;
 
     try {
         connect().then(async (db) => {
@@ -13,7 +13,8 @@ exports.createNewUser = async (req, res) => {
                 firstname,
                 lastname,
                 email,
-                password
+                password,
+                address
             });
 
             console.log(newUser);
