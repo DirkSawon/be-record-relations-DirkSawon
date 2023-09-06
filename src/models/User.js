@@ -1,6 +1,5 @@
-import addressModel from './Address.js';
-
-const { Schema, model } = require('mongoose');
+const { Schema, model, mongoose } = require('mongoose');
+//import mongoose from 'mongoose';
 
 const schema = new Schema({
     id: Number,
@@ -9,7 +8,7 @@ const schema = new Schema({
     email: String,
     password: String,
     address: {
-        type: Mongoose.Schema.Types.ObjecId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Address"
     }
 }, { timestamps: true});

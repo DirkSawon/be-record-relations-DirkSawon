@@ -7,10 +7,12 @@ const mongoose = require('mongoose');
 const users = require('./routes/users.js');
 const orders = require('./routes/orders.js');
 const records = require('./routes/records.js');
+const addresses = require('./routes/addresses.js');
 
 const Order = require('./models/Order.js');
 const Record = require('./models/Record.js');
 const User = require('./models/User.js');
+const Address = require('./models/Address.js');
 
 const { connect, closeConnection } = require('./configs/db.js');
 
