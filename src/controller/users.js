@@ -494,6 +494,7 @@ exports.updateUser = async (req, res) => {
                 doc.lastname = req.body.lastname || doc.lastname;
                 doc.email = req.body.email || doc.email;
                 doc.password = req.body.password || doc.password;
+                doc.address = req.body.address || doc.address
 
                 doc.save()
                 .then(doc => res.status(200).json({
