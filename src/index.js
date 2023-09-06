@@ -143,6 +143,7 @@ app.use(bodyParser.json());
 app.use("/users", users);
 app.use("/orders", orders);
 app.use("/records", records);
+app.use("/addresses", addresses);
 
 const port = process.env.PORT;
 
