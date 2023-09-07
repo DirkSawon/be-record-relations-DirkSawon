@@ -464,7 +464,7 @@ exports.getUser = async (req, res) => {
     try {
         connect().then(async (db) => {
             User
-            .findOne({ id: id}) // .findOne({ _id: id})
+            .findOne({ id: id}).populate("address", "-_id") // .findOne({ _id: id})
             .then(doc => {
                 res.status(200).json({
                     success: true,
