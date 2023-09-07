@@ -1,5 +1,6 @@
-const { Schema, model, mongoose } = require('mongoose');
-//import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
+//const address = require('./Address.js');
 
 const schema = new Schema({
     id: Number,

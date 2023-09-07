@@ -462,7 +462,7 @@ exports.getUser = async (req, res) => {
     const { id } = req.params;
 
     try {
-        connect().then(async, (db) => {
+        connect().then(async (db) => {
             User
             .findOne({ id: id}) // .findOne({ _id: id})
             .then(doc => {
