@@ -81,7 +81,9 @@ if (args[0] === "init" && args[1] === "-db") {
         const lastname = chance.last();
         const email = chance.email();
         const password = chance.string({ length: 10 });
-        //const address = Address._id;
+        const randStreet = chance.street();
+        const randCity = chance.city();
+        const address = { street: randStreet, city: randCity };
         //const address = await Address.find({}, {_id: 1}).limit(1);
         //console.log(address);
     
@@ -91,7 +93,7 @@ if (args[0] === "init" && args[1] === "-db") {
           lastname,
           email,
           password,
-          //address
+          address
         });
       }
       
