@@ -4,13 +4,14 @@ const { connect, closeConnection } = require('../configs/db.js');
 exports.createNewOrder = async (req, res) => {
     console.log(req.body);
 
-    const { id, qty } = req.body;
+    const { id, qty, record } = req.body;
 
     try {
         connect().then(async (db) => {
             const newOrder = new Order({
                 id,
-                qty
+                qty,
+                record
             });
 
             console.log(newOrder);
@@ -41,7 +42,7 @@ exports.getAllOrders = async (req, res) => {
     try {
         connect().then(async (db) => {
             Order
-            .find({})
+            .find({}).populate("record", "-_id")
             .then(docs => {
                 res.status(200).json({
                     success: true,
@@ -66,7 +67,7 @@ exports.getOrder = async (req, res) => {
     try {
         connect().then(async, (db) => {
             Order
-            .findOne({ id: id}) // .findOne({ _id: id})
+            .findOne({ id: id}).populate("record", "-_id") // .findOne({ _id: id})
             .then(doc => {
                 res.status(200).json({
                     success: true,
